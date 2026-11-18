@@ -1,0 +1,17 @@
+{
+  "elapsed_seconds": 1345.8201209580293,
+  "limit_seconds": 1800,
+  "peak_process_tree_rss": 4719247360,
+  "selected_workers": 14,
+  "sustained": "/path/to/AI-Riichi-mahjong/reports/stage2b/benchmark-sustained.json",
+  "sustained_completed_matches": 14960,
+  "sustained_decisions_per_second": 7491.981431518268,
+  "trials": [
+    "/path/to/AI-Riichi-mahjong/reports/stage2b/benchmark-workers-1.json",
+    "/path/to/AI-Riichi-mahjong/reports/stage2b/benchmark-workers-4.json",
+    "/path/to/AI-Riichi-mahjong/reports/stage2b/benchmark-workers-8.json",
+    "/path/to/AI-Riichi-mahjong/reports/stage2b/benchmark-workers-14.json"
+  ],
+  "valid": true,
+  "within_budget": true
+}

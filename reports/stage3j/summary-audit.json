@@ -1,0 +1,31 @@
+{
+  "schema": "stage3j-independent-primary-summary-audit-v1",
+  "complete": true,
+  "games_verified": 8192,
+  "independent_blocks": 256,
+  "primary_contrasts": [
+    "learned_tie_vs_reference",
+    "learned_tie_vs_hash",
+    "small_vs_reference",
+    "small_vs_learned_tie"
+  ],
+  "bootstrap_replicates": 10000,
+  "bootstrap_chunk_size": 1000,
+  "bootstrap_seed": 20261029031,
+  "joint_block_resampling_verified": true,
+  "all_three_saved_seeds_and_four_seats_verified": true,
+  "all_primary_fields_verified": true,
+  "all_arm_placements_and_pooled_means_verified": true,
+  "maximum_primary_absolute_difference": 5.551115123125783e-17,
+  "comparison_rtol": 1e-12,
+  "comparison_atol": 1e-12,
+  "policy_promotion": false,
+  "limitation": "Reproduces development statistics; bootstrap coverage remains approximate and no policy is promoted",
+  "plan_sha256": "50e3a2c00f354726c1f1e1bb7d63fb9c34abb83344642fb0b579f847d08e7da5",
+  "evaluation_report_sha256": "a723e5d835e3b19ea9948aa8b5bd30cbaaed4c683e6669a4181cf429d31c8c36",
+  "summary_sha256": "0e3d8f0a3d87d90a43ac7c1500713496eb8b6673387c2e708ef3991d4642f7b1",
+  "evaluation_manifest_sha256": "a4efcd4ca5fee9377865359194b3dc79b606085b3599dd4e6aa356128e91299c",
+  "source_sha256": "5f1ec0b8af1b5a974ff67a40c9c76b562d02b9b692f4d15f72b5a1c46a077c67",
+  "source_receipt_name": "audit-primary-summary",
+  "elapsed_seconds": 0.40112387493718415
+}

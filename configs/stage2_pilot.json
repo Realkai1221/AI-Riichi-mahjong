@@ -1,0 +1,13 @@
+{
+  "schema": "riichi-ai-stage2-plan-v1",
+  "approved_date": "2026-10-17",
+  "stage1_commit": "1a91128",
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage2",
+  "dataset": {"matches": 1000, "split_counts": [800, 100, 100], "teacher": "shanten_v2", "workers": 4},
+  "learning_curve_training_matches": [100, 300, 800],
+  "limits": {"total_training_seconds": 3600, "memory_gib": 32, "new_artifact_bytes": 5000000000},
+  "seed_namespaces": {"dataset": 2026101701, "learning_checks": 2026101702, "teacher_comparison": 2026101703, "throughput": 2026101704, "student_pilot": 2026101705, "student_confirmation": 2026101706},
+  "training": {"seed": 20261017, "batch_size": 256, "initial_steps_per_curve": 2500, "policy_target": "semantic_uniform_ties", "rank_loss_weight": 0.1, "selection": "validation tie agreement, then validation policy KL; never test outcomes"},
+  "evaluation": {"baseline": "shanten_v2", "opponents": ["shanten_v2", "defense_v2", "shanten_v2"], "pilot_blocks": 30, "confirmation_min_blocks": 185, "confirmation_max_blocks": 256, "margin": 0.1, "alpha": 0.05, "planning_power": 0.8, "method": "fixed-budget one-sided normal approximation over independent block means", "variance_floor_sd": 0.5460174728387007, "pilot_sd_multiplier": 1.25, "futility": "If pilot mean is at or below -0.10, retain the result as developmental and do not run confirmation.", "budget_rule": "If required confirmation exceeds 256 blocks, report inconclusive rather than underpowering a claimed pass."},
+  "deferred": ["reinforcement learning", "belief auxiliary training", "separate GRP training", "paid compute", "external game data", "public bot deployment"]
+}

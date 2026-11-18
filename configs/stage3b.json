@@ -1,0 +1,42 @@
+{
+  "schema": "stage3b-diagnostic-config-v1",
+  "limit_seconds": 300,
+  "reserve_seconds": 20,
+  "prepare_allowance_seconds": 30,
+  "diagnostic_allowance_seconds": 180,
+  "test_allowance_seconds": 60,
+  "memory_bytes": 34359738368,
+  "artifact_bytes": 500000000,
+  "maximum_rows": 512,
+  "probe_rows": 32,
+  "torch_threads": 1,
+  "temperatures": [1.0, 10.0, 100.0],
+  "mixture_epsilon": 0.05,
+  "include_mps": true,
+  "source_root": "/Users/example/Library/Application Support/RiichiAI/stage3a",
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage3b",
+  "reports_root": "reports/stage3b",
+  "checkpoints": [
+    {
+      "label": "initial",
+      "path": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+      "sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f"
+    },
+    {
+      "label": "final",
+      "path": "/Users/example/Library/Application Support/RiichiAI/stage3a/boundaries/batch-3.pt",
+      "sha256": "dff490dc2033a057c5d869e4cf4e215187b885edfc944d415643c296a600f05a"
+    }
+  ],
+  "constraints": {
+    "new_matches": 0,
+    "optimizer_updates": 0,
+    "checkpoint_writes": 0,
+    "book_training": false,
+    "test_split_loading": false,
+    "external_acquisition": false,
+    "paid_compute": false,
+    "strength_evaluation": false,
+    "sampling_policy_promotion": false
+  }
+}

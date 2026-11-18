@@ -1,0 +1,37 @@
+{
+  "schema": "stage3i-accounting-v1",
+  "complete": true,
+  "numerical_seconds": 480.63193354406394,
+  "limit_seconds": 5400,
+  "remaining_seconds": 4919.368066455936,
+  "operations": 16,
+  "failed_operations": 0,
+  "phases_seconds": {
+    "audit": 40.74744766805088,
+    "preflight": 13.470553251041565,
+    "evaluation": 281.27168045798317,
+    "training": 78.71314875001553,
+    "calibration": 22.408811041968875,
+    "features": 44.02029237500392
+  },
+  "sampled_peak_tree_rss_bytes": 6264881152,
+  "reserved_match_attempts": 4360,
+  "completed_matches": {
+    "preflight": 56,
+    "formal": 4272,
+    "replay": 32
+  },
+  "new_training_matches": 0,
+  "policy_promotion": false,
+  "admission_rejections": [
+    {
+      "operation": "preflight-features",
+      "executed": false,
+      "reason": "Source pin detected evaluation hardening edits after initial test. No lease/subprocess started; runtime sources refrozen and final release suite passed before features."
+    }
+  ],
+  "release_tests": 120,
+  "audit_and_diagnostic_tests": 33,
+  "final_combined_recorded_tests": 153,
+  "final_test_report": "reports/stage3i/release-final.xml"
+}

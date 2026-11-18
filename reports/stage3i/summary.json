@@ -1,0 +1,549 @@
+{
+  "schema": "stage3i-review-summary-v1",
+  "complete": true,
+  "training_device": "cpu",
+  "epochs": 12,
+  "optimizer_updates": 49788,
+  "head_row_presentations": 50935716,
+  "unique_training_rows": 471627,
+  "training_elapsed_seconds": 77.7856469170074,
+  "seeds": [
+    {
+      "seed": 20261024011,
+      "selected_epochs": {
+        "action": 12,
+        "state": 6,
+        "value": 11
+      },
+      "checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3i/training/seed-20261024011/selected.pt",
+      "sha256": "442c9ad20331c2de8edf687f9340b0bfe9173adb4b3f88692809a09b95ecdee5",
+      "gate_passed": true,
+      "gate_row_mse": {
+        "v": 0.13855171820166903,
+        "va": 0.13272424705352795,
+        "vb": 0.13841129138861072
+      },
+      "gate_match_mse": {
+        "v": 0.1436870215163414,
+        "va": 0.13700611183292513,
+        "vb": 0.14349619706217104
+      },
+      "va_relative_mse_reduction_vs_v_percent": 4.205989809277499,
+      "formal_lambda": 0,
+      "lambda_one_change_rate": 0.03877221324717286,
+      "lambda_one_changed": 1152,
+      "calibration_rows": 29712,
+      "maximum_changed_rows_at_3_percent": 891,
+      "lambda_one_excess_changed_rows": 261
+    },
+    {
+      "seed": 20261024012,
+      "selected_epochs": {
+        "action": 5,
+        "state": 11,
+        "value": 12
+      },
+      "checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3i/training/seed-20261024012/selected.pt",
+      "sha256": "9428cfae5ac7caff1891bcd49ae33338be562f2a3996028f2b8d560f464ca9e9",
+      "gate_passed": true,
+      "gate_row_mse": {
+        "v": 0.13848464769183383,
+        "va": 0.13281536518030587,
+        "vb": 0.13849713769019226
+      },
+      "gate_match_mse": {
+        "v": 0.14356433262228965,
+        "va": 0.1371858645207455,
+        "vb": 0.14359968139986684
+      },
+      "va_relative_mse_reduction_vs_v_percent": 4.093798558915829,
+      "formal_lambda": 0,
+      "lambda_one_change_rate": 0.030021540118470653,
+      "lambda_one_changed": 892,
+      "calibration_rows": 29712,
+      "maximum_changed_rows_at_3_percent": 891,
+      "lambda_one_excess_changed_rows": 1
+    },
+    {
+      "seed": 20261024013,
+      "selected_epochs": {
+        "action": 12,
+        "state": 12,
+        "value": 12
+      },
+      "checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3i/training/seed-20261024013/selected.pt",
+      "sha256": "766f28d2b16a24814c2dab7dd78495949f483fbc939077e5059fe8af11079935",
+      "gate_passed": true,
+      "gate_row_mse": {
+        "v": 0.13844851825121213,
+        "va": 0.1325289566046358,
+        "vb": 0.13843433575428352
+      },
+      "gate_match_mse": {
+        "v": 0.14358346559489601,
+        "va": 0.13685297527153867,
+        "vb": 0.14354533861716084
+      },
+      "va_relative_mse_reduction_vs_v_percent": 4.275641026244436,
+      "formal_lambda": 0,
+      "lambda_one_change_rate": 0.040892568659127625,
+      "lambda_one_changed": 1215,
+      "calibration_rows": 29712,
+      "maximum_changed_rows_at_3_percent": 891,
+      "lambda_one_excess_changed_rows": 324
+    }
+  ],
+  "formal_games": 4272,
+  "formal_game_rows": 2692288,
+  "formal_game_seconds": 280.32779012498213,
+  "reference_pairs": 1880,
+  "reference_raw_wrapped_identical_canonical_games": 1880,
+  "learned_candidate_games": 0,
+  "game_comparisons": [
+    {
+      "comparison": "reference_wrapped_vs_reference_raw",
+      "mean_rank": 2.529255319148936,
+      "control_mean_rank": 2.529255319148936,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          0.0,
+          0.0
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -0.37586730958261605,
+          0.37586730958261605
+        ],
+        "independent_blocks": 470,
+        "mean_rank_improvement": 0.0,
+        "mean_utility_difference": 0.0,
+        "standard_error": 0.0,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    },
+    {
+      "comparison": "reset_raw_vs_reference_raw",
+      "mean_rank": 3.3671875,
+      "control_mean_rank": 2.33984375,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          -1.203125,
+          -0.84375
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -2.0459198868054647,
+          -0.00876761319453534
+        ],
+        "independent_blocks": 64,
+        "mean_rank_improvement": -1.02734375,
+        "mean_utility_difference": -1.02734375,
+        "standard_error": 0.09031696889517332,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    },
+    {
+      "comparison": "reset_wrapped_vs_reference_wrapped",
+      "mean_rank": 3.3125,
+      "control_mean_rank": 2.33984375,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          -1.14453125,
+          -0.796875
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -1.9912323868054647,
+          0.04591988680546466
+        ],
+        "independent_blocks": 64,
+        "mean_rank_improvement": -0.97265625,
+        "mean_utility_difference": -0.97265625,
+        "standard_error": 0.08928125763927053,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    },
+    {
+      "comparison": "reset_wrapped_vs_reset_raw",
+      "mean_rank": 3.3125,
+      "control_mean_rank": 3.3671875,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          0.0078125,
+          0.10546875
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -0.9638886368054647,
+          1.0732636368054647
+        ],
+        "independent_blocks": 64,
+        "mean_rank_improvement": 0.0546875,
+        "mean_utility_difference": 0.0546875,
+        "standard_error": 0.025190709847068747,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    }
+  ],
+  "independent_audit": {
+    "cache": {
+      "all_logged_probabilities_exact": true,
+      "all_optional_explorer_rows_preserved": true,
+      "complete": true,
+      "partitions": {
+        "calibration": {
+          "candidates": 270387,
+          "matches": 200,
+          "rows": 29712
+        },
+        "gate": {
+          "candidates": 539036,
+          "matches": 400,
+          "rows": 59134
+        },
+        "selection": {
+          "candidates": 268403,
+          "matches": 200,
+          "rows": 29647
+        },
+        "training": {
+          "candidates": 4293363,
+          "matches": 3200,
+          "rows": 471627
+        }
+      },
+      "reforward_rows": 64
+    },
+    "calibration": {
+      "all_choices_exact": true,
+      "artifacts": 1800,
+      "complete": true,
+      "head_reforward_selection": "First32 SHA256(stage3i-prediction-audit|partition|match_id|row_index) per calibration/gate partition, all3seeds",
+      "independent_head_reforwards": 192,
+      "prediction_rows": 266538,
+      "seeds": [
+        {
+          "admitted_for_games": false,
+          "gate_passed": true,
+          "lambda_": 0,
+          "match_mse": {
+            "v": 0.1436870215163414,
+            "va": 0.13700611183292513,
+            "vb": 0.14349619706217104
+          },
+          "row_mse": {
+            "v": 0.13855171820166903,
+            "va": 0.13272424705352795,
+            "vb": 0.13841129138861072
+          },
+          "seed": 20261024011
+        },
+        {
+          "admitted_for_games": false,
+          "gate_passed": true,
+          "lambda_": 0,
+          "match_mse": {
+            "v": 0.14356433262228965,
+            "va": 0.1371858645207455,
+            "vb": 0.14359968139986684
+          },
+          "row_mse": {
+            "v": 0.13848464769183383,
+            "va": 0.13281536518030587,
+            "vb": 0.13849713769019226
+          },
+          "seed": 20261024012
+        },
+        {
+          "admitted_for_games": false,
+          "gate_passed": true,
+          "lambda_": 0,
+          "match_mse": {
+            "v": 0.14358346559489601,
+            "va": 0.13685297527153867,
+            "vb": 0.14354533861716084
+          },
+          "row_mse": {
+            "v": 0.13844851825121213,
+            "va": 0.1325289566046358,
+            "vb": 0.13843433575428352
+          },
+          "seed": 20261024013
+        }
+      ]
+    },
+    "complete": true,
+    "elapsed_seconds": 30.476870374986902,
+    "games": {
+      "all_lifecycle_and_artifact_hashes_verified": true,
+      "candidate_seeds": [],
+      "complete": true,
+      "contrasts": 4,
+      "decisions": {
+        "all_model_choices_recomputed_from_persisted_scores": true,
+        "all_semantic_tokens_and_simultaneous_response_links_verified": true,
+        "all_terminal_scores_reconstructed": true,
+        "by_arm": {
+          "reference_raw": {
+            "focal_corrected_rows": 0,
+            "focal_optional_rows": 266883,
+            "games": 1880
+          },
+          "reference_wrapped": {
+            "focal_corrected_rows": 0,
+            "focal_optional_rows": 266883,
+            "games": 1880
+          },
+          "reset_raw": {
+            "focal_corrected_rows": 0,
+            "focal_optional_rows": 38125,
+            "games": 256
+          },
+          "reset_wrapped": {
+            "focal_corrected_rows": 0,
+            "focal_optional_rows": 37601,
+            "games": 256
+          }
+        },
+        "complete": true,
+        "focal_corrected_rows": 0,
+        "focal_optional_rows": 609492,
+        "games": 4272,
+        "requests": 2661745,
+        "rows": 2692288
+      },
+      "games": 4272,
+      "no_seed_selection": true,
+      "physical_pair_checks": 2648,
+      "rows": 2692288
+    },
+    "plan_sha256": "6f5b766c6e063379191d017a781888274b1a97df0dc41f0d958a679af57ccb94",
+    "policy_promotion": false,
+    "schema": "stage3i-independent-evidence-audit-v1",
+    "training": {
+      "all_residual_targets_bind_selected_value": true,
+      "all_selected_epochs_follow_fixed_rule": true,
+      "checkpoints": 108,
+      "complete": true,
+      "epochs_per_head": 12,
+      "heads": 9,
+      "optimizer_updates": 49788,
+      "row_presentations": 50935716,
+      "seeds": 3
+    }
+  },
+  "replays": {
+    "all_game_and_action_artifact_payloads_exact": true,
+    "attempts": 32,
+    "complete": true,
+    "elapsed_seconds": 2.9768605419667438,
+    "limitation": "Same pinned engine deterministic reproducibility, not cross-engine full rule certification",
+    "plan_sha256": "6f5b766c6e063379191d017a781888274b1a97df0dc41f0d958a679af57ccb94",
+    "policy_promotion": false,
+    "replays": [
+      {
+        "exact": true,
+        "game_sha256": "d69abd2e297d6d41d0d6601519804cc588e1c8d94671f8120ab4d094e4ae0fdb",
+        "match_id": "block-209-seat-0-reference_wrapped",
+        "rows": 548
+      },
+      {
+        "exact": true,
+        "game_sha256": "c0f3f5bc6cca96c5539ad224d9f66abd80a1631442a6a0717815a450c4a2b66e",
+        "match_id": "block-064-seat-3-reference_wrapped",
+        "rows": 369
+      },
+      {
+        "exact": true,
+        "game_sha256": "8c1c458348ba52e1d49829f251d01df745cf8fd701b1eee346910d9c38128e05",
+        "match_id": "block-290-seat-2-reference_raw",
+        "rows": 795
+      },
+      {
+        "exact": true,
+        "game_sha256": "8f675f46bdd756b863c043c9b8f93de2ebb752261b13ff9de661fab628dfe6d9",
+        "match_id": "block-232-seat-3-reference_raw",
+        "rows": 991
+      },
+      {
+        "exact": true,
+        "game_sha256": "a222caa199ee1a04c448dae48d98240dc5fb8a84c2b85bde6033ae83755f991e",
+        "match_id": "block-250-seat-0-reference_wrapped",
+        "rows": 478
+      },
+      {
+        "exact": true,
+        "game_sha256": "490933cc2c042fedd25ca14d98e5f450fa17271d24b5ce4810efcee93204e584",
+        "match_id": "block-170-seat-3-reference_raw",
+        "rows": 491
+      },
+      {
+        "exact": true,
+        "game_sha256": "7961a8587958f18d9ed3fe7a33ef1ca4f92360fc5f132268ff3565ffee9026d0",
+        "match_id": "block-045-seat-2-reset_wrapped",
+        "rows": 597
+      },
+      {
+        "exact": true,
+        "game_sha256": "5a77d66a3db9f11ef4a35f7692286058ab8f1f7362e8186bdab959be13e12882",
+        "match_id": "block-255-seat-0-reference_raw",
+        "rows": 620
+      },
+      {
+        "exact": true,
+        "game_sha256": "145385559e679f1a7b4e1f031a74b7e2d27c3fb3419166e4faccb2e11a6c3cc2",
+        "match_id": "block-300-seat-0-reference_raw",
+        "rows": 563
+      },
+      {
+        "exact": true,
+        "game_sha256": "d00d1d1e6b319f6764dcab9aad71905c2e121e9d8a962173ccc0b673f387b54e",
+        "match_id": "block-290-seat-3-reference_raw",
+        "rows": 854
+      },
+      {
+        "exact": true,
+        "game_sha256": "cc341c808749ebdb8b3dd94b9f3c5eb1011c024dd0372c5dcdedf0b1f8010f35",
+        "match_id": "block-266-seat-3-reference_raw",
+        "rows": 702
+      },
+      {
+        "exact": true,
+        "game_sha256": "c7610c12a300b545df6b2caf48470d5c5e1cc321a68fd5c695ca4c9a6886e018",
+        "match_id": "block-005-seat-2-reset_raw",
+        "rows": 513
+      },
+      {
+        "exact": true,
+        "game_sha256": "7dee39a40afb8188cd6597691e84e70373e13d7e22c37572f97e7130042ab889",
+        "match_id": "block-059-seat-0-reset_wrapped",
+        "rows": 1098
+      },
+      {
+        "exact": true,
+        "game_sha256": "f13df9045525af0e4734761aab7667e7637ee75dfeca2dbacbdaf81cf07d0bbd",
+        "match_id": "block-029-seat-1-reset_raw",
+        "rows": 566
+      },
+      {
+        "exact": true,
+        "game_sha256": "ae9593f81b5a641e3ec929e26e0e3021ab08fe5bebd5c32b706827299f437581",
+        "match_id": "block-455-seat-2-reference_wrapped",
+        "rows": 607
+      },
+      {
+        "exact": true,
+        "game_sha256": "40508e8b13df535b86b1ffb46182e1f66b2eaf9095753d2d71428b7ebfffa74a",
+        "match_id": "block-021-seat-0-reference_wrapped",
+        "rows": 602
+      },
+      {
+        "exact": true,
+        "game_sha256": "63fbcb309145a0a374c512b894f48a04261be75d30cb4ff165711e588fb87e82",
+        "match_id": "block-061-seat-3-reset_raw",
+        "rows": 626
+      },
+      {
+        "exact": true,
+        "game_sha256": "01928b91c6cc4661f68afe210bf43979c06f0d7a843dd2464a440e89fe8339fc",
+        "match_id": "block-444-seat-1-reference_raw",
+        "rows": 716
+      },
+      {
+        "exact": true,
+        "game_sha256": "c7ad1afbeeaef4d8806815879e34915e72b8855872a4865c34a0c9b24fa21ada",
+        "match_id": "block-449-seat-3-reference_raw",
+        "rows": 576
+      },
+      {
+        "exact": true,
+        "game_sha256": "6ae0d08691f70bb865ae4f6e7fcee40aa7ba18a584b7899452f749aff09287e1",
+        "match_id": "block-344-seat-0-reference_wrapped",
+        "rows": 729
+      },
+      {
+        "exact": true,
+        "game_sha256": "3c7984465cf02145c036d6992bb16d6d1f57fa80d90663ec8b81e63c26dd2bad",
+        "match_id": "block-183-seat-2-reference_raw",
+        "rows": 536
+      },
+      {
+        "exact": true,
+        "game_sha256": "bc0d011893fc718449608c8fac86f5204f9104ac60ee19467516b500bc4e7cb6",
+        "match_id": "block-181-seat-0-reference_wrapped",
+        "rows": 717
+      },
+      {
+        "exact": true,
+        "game_sha256": "a11e9a87178fca933786061036cbf9f901e7741d757f46cb5c68c64285f94f08",
+        "match_id": "block-072-seat-2-reference_raw",
+        "rows": 210
+      },
+      {
+        "exact": true,
+        "game_sha256": "4b3714500fe9fbfd0efd1fcf7461333fa7079d550caaa775cba10852f63cb2a1",
+        "match_id": "block-283-seat-1-reference_wrapped",
+        "rows": 527
+      },
+      {
+        "exact": true,
+        "game_sha256": "162a3fb36a345d43f13a2db04c6c3831af4fa07930c99a81b3afb4c30d4bf8fd",
+        "match_id": "block-308-seat-0-reference_raw",
+        "rows": 182
+      },
+      {
+        "exact": true,
+        "game_sha256": "cccebea2f72a9677322b4361231d7a9fdf09383499d8ca9a185e325cb0715e92",
+        "match_id": "block-191-seat-3-reference_wrapped",
+        "rows": 520
+      },
+      {
+        "exact": true,
+        "game_sha256": "7f873acbcc8d4e0eaee4e0e30f17b8ce86c35ce438ae57c2af07ec95236a9b38",
+        "match_id": "block-437-seat-3-reference_wrapped",
+        "rows": 535
+      },
+      {
+        "exact": true,
+        "game_sha256": "ad4342ada8c05f0d30db4c589dd0543fd0fb686644604544f4f1967d8379a3de",
+        "match_id": "block-012-seat-2-reset_raw",
+        "rows": 741
+      },
+      {
+        "exact": true,
+        "game_sha256": "ceffdc6182dcde207a1e9e5af61a22c4216b17c9e250bc643aac6d41ce1c6798",
+        "match_id": "block-458-seat-1-reference_wrapped",
+        "rows": 555
+      },
+      {
+        "exact": true,
+        "game_sha256": "4592503b479fdd2a6aa00ad37ec89ac32edf55e4c216458eb473495dbd95ed75",
+        "match_id": "block-325-seat-2-reference_wrapped",
+        "rows": 545
+      },
+      {
+        "exact": true,
+        "game_sha256": "7eeb7f68a11e240b749e22d1ec3f7b467189e370afdbab39afc0194d0f48b689",
+        "match_id": "block-046-seat-1-reset_wrapped",
+        "rows": 661
+      },
+      {
+        "exact": true,
+        "game_sha256": "7d82c7e38565273cc8270bf953baf9cbf260ca2c012232bf0ade9b9ca10f1271",
+        "match_id": "block-121-seat-3-reference_wrapped",
+        "rows": 444
+      }
+    ],
+    "schema": "stage3i-independent-replays-v1"
+  },
+  "posthoc_diagnostic_path": "/path/to/AI-Riichi-mahjong/reports/stage3i/posthoc-fractional-diagnostic.json",
+  "policy_promotion": false,
+  "inputs": {
+    "/Users/example/Library/Application Support/RiichiAI/stage3i/training/training-report.json": "3290afb86fe8af001ff843c94c02b4a4ea0ecb374cafb4a602eac649d32690a6",
+    "/path/to/AI-Riichi-mahjong/reports/stage3i/calibration.json": "f07763f6a16c93248ed5ec24dc8e7b3919f21af13db732fd505a32afb389be4a",
+    "/path/to/AI-Riichi-mahjong/reports/stage3i/evaluation.json": "77d07e0650510c56ae15bfe324f61c1268dcb5a579a016ef1eb4c9e81cec6a35",
+    "/path/to/AI-Riichi-mahjong/reports/stage3i/audit.json": "9e448d221376a00e7379ed11e1e4f52dabefc499334c6d67de63bf0cdfb14bf5",
+    "/path/to/AI-Riichi-mahjong/reports/stage3i/replays.json": "7c5c2725936637a9f096322e75b18fef2ab165fea72eb4835b9958b7bc9f75ea",
+    "/path/to/AI-Riichi-mahjong/reports/stage3i/posthoc-fractional-diagnostic.json": "4af44ed66a619f648a355ad9fc6ae1360a689eb5156a7e87baa760d78bf267f1"
+  }
+}

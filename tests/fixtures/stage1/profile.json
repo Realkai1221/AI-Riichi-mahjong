@@ -1,0 +1,65 @@
+{
+  "profile": {
+    "schema": "riichi-ai-rule-profile-v1",
+    "profile_version": 1,
+    "engine": {
+      "name": "riichienv",
+      "version": "0.4.10"
+    },
+    "game_mode": "4p-red-half",
+    "resolved_game_mode_id": 2,
+    "detailed_preset": "GameRule.default_tenhou",
+    "game_rule": {
+      "allows_ron_on_ankan_for_kokushi_musou": false,
+      "is_kokushi_musou_13machi_double": false,
+      "is_suuankou_tanki_double": false,
+      "is_junsei_chuurenpoutou_double": false,
+      "is_daisuushii_double": false,
+      "yakuman_pao_is_liability_only": false,
+      "sanchaho_is_draw": true,
+      "kuikae_forbidden": true,
+      "dealer_first_discard_is_tedashi": false
+    },
+    "match": {
+      "players": 4,
+      "initial_scores": [
+        25000,
+        25000,
+        25000,
+        25000
+      ],
+      "red_physical_tiles": [
+        16,
+        52,
+        88
+      ],
+      "open_tanyao": true,
+      "scheduled_last_round": [
+        1,
+        3
+      ],
+      "extension_last_round": [
+        2,
+        3
+      ],
+      "target_score": 30000,
+      "bankruptcy_below": 0,
+      "dealer_win_continues": true,
+      "dealer_tenpai_draw_continues": true,
+      "last_dealer_top_at_target_stops": true,
+      "abortive_draw_continues": true,
+      "tie_priority": "initial_seat_ascending",
+      "terminal_sticks_recipient": "first_place",
+      "double_ron": true,
+      "triple_ron": "abortive_draw",
+      "double_ron_honba_and_sticks": "nearest_winner_after_discarder",
+      "riichi_cost": 1000,
+      "honba_ron": 300,
+      "honba_tsumo_each": 100,
+      "noten_pool": 3000,
+      "kazoe_yakuman": true,
+      "kiriage_mangan": false
+    }
+  },
+  "sha256": "c3f043568af2dcefc1be8de65fd241311e53347e56401f3ac09f5edcde3dbe98"
+}

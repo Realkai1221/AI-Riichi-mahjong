@@ -1,0 +1,88 @@
+{
+  "schema": "riichi-ai-stage2b-plan-v1",
+  "approved_date": "2026-10-17",
+  "authorization": "User approved reviewed recommendations and continuation within the proposed budget.",
+  "review_commit": "18364394c8595c4f0312cde787ebea719baad63c",
+  "stage2a_snapshot_commit": "e19a6cb959a72bdfbf3bb62d7b9c327dd01337a7",
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage2b",
+  "reports_root": "reports/stage2b",
+  "stage2a_dataset": "/Users/example/Library/Application Support/RiichiAI/stage2/dataset",
+  "stage2a_manifest_sha256": "55d58a7a8de5c29dc5137eca80926829be786b201f2372bcb0f2ef3208b211d7",
+  "historical_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage2/models/selected-extended.pt",
+  "historical_checkpoint_sha256": "09d42bf7c2b881f57d76f4ed38b33fa04070a90c7294d183338e5d0a30d1537d",
+  "rule_profile_hash": "c3f043568af2dcefc1be8de65fd241311e53347e56401f3ac09f5edcde3dbe98",
+  "teacher": "shanten_v2",
+  "opponents": ["shanten_v2", "defense_v2", "shanten_v2"],
+  "utility": [1.5, 0.5, -0.5, -1.5],
+  "limits": {
+    "total_training_related_seconds": 3600,
+    "memory_gib": 32,
+    "new_artifact_bytes": 5000000000,
+    "maximum_full_training_runs": 8,
+    "maximum_new_corpus_matches": 600,
+    "development_campaigns": 4,
+    "development_blocks_each": 30,
+    "benchmark_total_seconds": 1800,
+    "benchmark_sustained_seconds": 1200,
+    "confirmation_max_blocks": 256
+  },
+  "resource_accounting": {
+    "training_related": "Cumulative feature derivation/audit, numerical learning checks, model initialization/loading, optimization, validation/selection and action-test evaluation; failed attempts and interrupted runs remain counted. Source implementation and non-learning unit tests are recorded separately.",
+    "collection": "Timed and counted separately; no more than 600 new full corpus matches including diagnostic, validation, test and optional aggregation.",
+    "evaluation": "At most four 30-block development campaigns and one conditional fixed-budget confirmation; repeated paired wall executions are not independent matches.",
+    "benchmark": "Worker sweeps, process setup/drain and sustained benchmark share the 1800-second ceiling; no benchmark trajectories enter training.",
+    "stops": "Cooperative limits with reserved save/drain overhead; resource-limited comparisons are incomplete, never silently promoted. No automatic budget extension."
+  },
+  "data_groups": [
+    {"name": "diagnostic_student", "split": "diagnostic", "stratum": "student", "matches": 100, "root_seed": 2026101711, "behavior": "historical_student"},
+    {"name": "validation_teacher", "split": "validation", "stratum": "teacher", "matches": 50, "root_seed": 2026101712, "behavior": "teacher"},
+    {"name": "validation_student", "split": "validation", "stratum": "student", "matches": 50, "root_seed": 2026101713, "behavior": "historical_student"},
+    {"name": "test_teacher", "split": "test", "stratum": "teacher", "matches": 50, "root_seed": 2026101714, "behavior": "teacher"},
+    {"name": "test_student", "split": "test", "stratum": "student", "matches": 50, "root_seed": 2026101715, "behavior": "historical_student"}
+  ],
+  "collection": {"workers": 4, "focal_seat": "balance within each group; only focal actor/target decisions saved", "max_steps": 100000, "replay_matches_per_group": 1, "test_policy": "Integrity and feature-alignment checks allowed; model predictions and performance on test withheld until final checkpoint is frozen."},
+  "seed_namespaces": {"aggregation": 2026101716, "development": 2026101717, "confirmation": 2026101718, "benchmark": 2026101719, "learning_checks": 2026101720},
+  "features": {"history_events": 128, "v1_preserved": true, "candidate_efficiency": ["post_discard_shanten", "visible_availability_ukeire", "nonexhausted_improving_type_count", "applicable"], "derived_splits_stage2a": ["train", "validation"], "exact_target_alignment_required": true},
+  "training": {
+    "seeds": [202610171, 202610172],
+    "primary_seed": 202610171,
+    "training_matches": 800,
+    "steps": 20000,
+    "batch_size": 256,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "target_mode": "soft",
+    "validate_every": 500,
+    "validation_samples_per_stratum": 5000,
+    "checkpoint_every": 1000,
+    "recipes_in_execution_order": [
+      {"name": "features_rank01", "features": "v2", "rank_weight": 0.1},
+      {"name": "raw_rank01", "features": "v1", "rank_weight": 0.1},
+      {"name": "features_rank0", "features": "v2", "rank_weight": 0.0}
+    ],
+    "initialization": "Explicitly copy same-name/same-shape raw-model initial tensors into feature models per seed; record shared tensor hashes. Additional feature parameters are initialized from a separate declared seeded stream. Preserve paired sampling streams.",
+    "checkpoint_selection": "Fixed stratified validation indices: maximize equal-stratum mean optional DISCARD best-set agreement, then minimize equal-stratum shanten-worsening rate, then minimize equal-stratum optional policy KL.",
+    "recipe_selection": "Evaluate each selected checkpoint on full validation. Average the same three equal-stratum metrics across both seeds; lexicographic order as above, fixed recipe order breaks exact ties. Include any completed eligible contingent recipe.",
+    "final_checkpoint": "Primary seed checkpoint of winning recipe, frozen before any test predictions or development match outcomes. No seed substitution after outcomes.",
+    "budget_planning": "Measure fixed tiny-fit/check workloads first. If projected required comparisons cannot fit, reduce a common update ceiling before formal runs; otherwise preserve 20000. Reserve at least 120 seconds for final validation/test/checkpoint work. Skip optional runs unless both can fit."
+  },
+  "contingent": {
+    "maximum_recipes": 1,
+    "maximum_runs": 2,
+    "base": "Best full-validation feature-assisted rank setting, averaged over both seeds",
+    "priority_1": "Student-focal optional-discard error minus teacher-focal error exceeds 0.02 after averaging per-stratum row rates across both seeds: collect up to 300 new training matches using frozen primary-seed base behavior and teacher queries; train both seeds from paired initialization on a declared 50:50 original/student-row mixture at the common update count.",
+    "priority_2": "Otherwise, equal-shanten lost-ukeire rate exceeds 0.02 on full validation averaged equally across strata/seeds AND exceeds 0.01 on fixed frozen-model training samples AND tiny-fit/alignment checks pass: test a remaining-hand candidate encoder with two seeds, no data change.",
+    "otherwise": "No contingent run; thresholds allocate experiments, not significance or causal claims.",
+    "controls": "Reuse corresponding completed base runs; no extra control runs or extra continuation updates. Exact conditional architecture/data manifest frozen before its training."
+  },
+  "evaluation": {
+    "workers": 4,
+    "candidate_recipes": "Top two eligible recipes by full-validation two-seed score, each seed once; common development blocks. If fewer than two eligible complete recipes, report incomplete scope.",
+    "baseline": "shanten_v2",
+    "pilot_blocks": 30,
+    "confirmation": {"margin": 0.1, "alpha": 0.05, "planning_power": 0.8, "variance_floor_sd": 0.5460174728387007, "pilot_sd_multiplier": 1.25, "minimum_blocks": 185, "maximum_blocks": 256, "method": "Fixed-count one-sided normal approximation over independent paired block means", "futility": "Final candidate pilot mean <= -0.10: do not confirm", "over_cap": "Inconclusive; do not underpower a claimed pass", "reuse": "No tuning or candidate switching using confirmation blocks"}
+  },
+  "benchmark": {"worker_trials": [1, 4, 8, 14], "cpu_threads_per_worker": 1, "short_trial_seconds": 35, "escalation": "Try next worker count only if preceding count improves throughput without resource issues", "sustained_seconds": 1200, "keep": "Per-match compact identities/seeds/outcomes/failure hashes and time-window/cost/memory summaries, with replay evidence for failures; no training corpus", "all_seats": "Frozen final candidate; inference only"},
+  "deferred": ["history window increase", "calls_v1 implementation and campaign", "reinforcement learning", "search", "external data/weights", "external contact", "paid compute", "public play", "overnight runs"]
+}

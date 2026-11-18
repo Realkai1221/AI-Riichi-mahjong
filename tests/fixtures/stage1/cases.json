@@ -1,0 +1,23 @@
+{
+  "schema": "riichi-ai-rule-fixtures-v1",
+  "provenance": "Locally authored synthetic hands; no human game records. Complete physical walls are constructed by wall_for_hands and checked before play.",
+  "rules_source": "https://tenhou.net/man/#RULE",
+  "independent_scorer": "https://github.com/MahjongRepository/mahjong",
+  "cases": {
+    "double_ron": {"hands": {"1": "123m123p123789s5z", "2": "456789m456p456s5z"}, "draws": ["5z"], "dead_wall": {"131": "3z"}, "expected": "Seat 1: 4 han 40 fu = 8000; seat 2: 2 han 40 fu = 2600. Nearest winner alone receives honba and deposits."},
+    "triple_ron": {"hands": {"1": "123m123p123789s5z", "2": "456789m456p456s5z", "3": "789p789s111222z5z"}, "draws": ["5z"], "dead_wall": {"131": "3z"}, "expected": "Triple ron aborts without score transfer; same dealer, honba increments, deposits carry."},
+    "call_priority": {"hands": {"1": "12m456m789p456s23z", "2": "33m234p678234s23z", "3": "12m123p123789s11z"}, "draws": ["3m"], "dead_wall": {"131": "3z"}, "expected": "Ron preempts pon and chi; after declining ron, pon preempts chi."},
+    "ankan": {"hands": {"0": "1111m234678p234s"}, "draws": ["5z"], "dead_wall": {"131": "3z"}, "expected": "Closed kan exposes its dora before the replacement draw; four tiles enter a closed meld."},
+    "kakan": {"hands": {"1": "11m234678p234s56z"}, "draws": ["1m", "2z", "3z", "4z", "1m"], "dead_wall": {"131": "7z"}, "expected": "Pon followed by drawing the fourth copy permits added kan; dora is delayed until discard or a following replacement draw."},
+    "riichi_ankan_allowed": {"hands": {"0": "111m234678p234s5z"}, "draws": ["6z", "1z", "2z", "3z", "1m"], "dead_wall": {"131": "4z"}, "expected": "After riichi discarding green, drawing fourth 1m preserves the white-dragon wait and permits ankan."},
+    "riichi_ankan_forbidden": {"hands": {"0": "111234m567p8889s"}, "draws": ["6z", "1z", "2z", "3z", "8s"], "dead_wall": {"131": "4z"}, "expected": "After riichi, ankan of 8s would remove the 7s wait from the 7s/9s wait set, so is illegal."},
+    "temporary_furiten": {"hands": {"3": "123m123p123789s5z"}, "draws": ["5z", "5z", "1z", "2z", "5z"], "dead_wall": {"131": "3z"}, "expected": "Declining first white-dragon ron blocks the next ron before own turn, then own draw/discard clears temporary furiten."},
+    "discard_furiten": {"hands": {"0": "123m123p123789s5z"}, "draws": ["5z", "5z", "1z", "2z", "5z"], "dead_wall": {"131": "3z"}, "expected": "Discarding own winning tile blocks subsequent ron, while later tsumo remains legal."},
+    "dealer_tenhou": {"hands": {"0": "123456m123p123s1z"}, "draws": ["1z"], "dead_wall": {"131": "3z"}, "expected": "Dealer first-draw win is tenhou: 16000 from each opponent before honba; dealer continues except applicable match-end conditions."},
+    "kyuushu": {"hands": {"0": "19m19p19s1234567z"}, "draws": ["2m"], "expected": "Nine-or-more distinct terminal/honor kinds on uninterrupted first turn permits abortive draw and continuation."},
+    "riichi_discard_ron": {"hands": {"0": "111m234678p234s6z", "1": "123m123p123789s5z"}, "draws": ["5z"], "dead_wall": {"131": "3z"}, "expected": "A ron on the riichi declaration discard prevents its 1000-point deposit from being accepted."},
+    "riichi_furiten": {"hands": {"3": "123m123p123789s5z"}, "draws": ["2z", "3z", "4z", "6z", "5z", "7z", "1z", "2m", "5z"], "dead_wall": {"131": "4z"}, "expected": "After accepted riichi, declining a winning discard causes furiten that survives the next own draw/discard."},
+    "exhaustive_dealer_tenpai": {"hands": {"0": "123456m123p123s1z", "1": "13579m13579p135s", "2": "2468m2468p2468s1z", "3": "13579m13579p579s"}, "draws": [], "expected": "All seats always discard their drawn tile and decline calls/wins. Only dealer starts and remains tenpai: +3000/-1000/-1000/-1000, repeat and increment honba."},
+    "exhaustive_dealer_noten": {"hands": {"0": "13579m13579p135s", "1": "123456m123p123s1z", "2": "2468m2468p2468s1z", "3": "13579m13579p579s"}, "draws": [], "expected": "Only next seat is tenpai at exhaustive draw. Dealer advances, honba increments, and match-end/extension conditions are evaluated."}
+  }
+}

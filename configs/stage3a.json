@@ -1,0 +1,447 @@
+{
+  "schema": "stage3a-config-v1",
+  "limit_seconds": 600,
+  "memory_bytes": 34359738368,
+  "artifact_bytes": 1000000000,
+  "reserve_seconds": 45,
+  "per_batch_allowance_seconds": 100,
+  "prepare_allowance_seconds": 30,
+  "test_allowance_seconds": 90,
+  "device": "cpu",
+  "torch_threads": 1,
+  "maximum_batches": 4,
+  "matches_per_batch": 16,
+  "maximum_matches": 64,
+  "maximum_updates": 4,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.0,
+  "gradient_clip": 1.0,
+  "replay_atol": 1e-06,
+  "replay_rtol": 1e-05,
+  "microbatch_size": 1,
+  "max_steps": 100000,
+  "reference_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+  "reference_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage3a",
+  "reports_root": "reports/stage3a",
+  "constraints": {
+    "book_training": false,
+    "test_split_loading": false,
+    "external_acquisition": false,
+    "paid_compute": false,
+    "fresh_strength_evaluation": false,
+    "opponent_actions_eligible": false,
+    "baseline": "zero",
+    "entropy_bonus": 0.0,
+    "reward_shaping": false,
+    "replay_reuse": false,
+    "rank_head_frozen": true
+  },
+  "batches": [
+    {
+      "batch_index": 0,
+      "matches": [
+        {
+          "match_index": 0,
+          "seed": 13310138084736969287,
+          "sampling_seed": 4927920565883348639,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 1,
+          "seed": 3639563556687913957,
+          "sampling_seed": 399483771225793897,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 2,
+          "seed": 18214515998594303266,
+          "sampling_seed": 5792586671072415576,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 3,
+          "seed": 970850751686550106,
+          "sampling_seed": 1020393898415025928,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 4,
+          "seed": 5110906310291811390,
+          "sampling_seed": 11775438163934332925,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 5,
+          "seed": 7574761055439433654,
+          "sampling_seed": 11556736013280349968,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 6,
+          "seed": 7784125032047062957,
+          "sampling_seed": 15248626404928042618,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 7,
+          "seed": 11520504039847397354,
+          "sampling_seed": 7486681144601616457,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 8,
+          "seed": 14179140211415770562,
+          "sampling_seed": 7511473331262789971,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 9,
+          "seed": 6431478605163641235,
+          "sampling_seed": 10541303512426780613,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 10,
+          "seed": 13203273883109598176,
+          "sampling_seed": 11908384575226001135,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 11,
+          "seed": 11891001577320187339,
+          "sampling_seed": 13932516377427604453,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 12,
+          "seed": 13373512462908365972,
+          "sampling_seed": 3129671748645602900,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 13,
+          "seed": 994855113724542938,
+          "sampling_seed": 586431685702988976,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 14,
+          "seed": 13739008828457543405,
+          "sampling_seed": 7504033650817992494,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 15,
+          "seed": 11215749692586980411,
+          "sampling_seed": 5194497533037473379,
+          "learner_seat": 3
+        }
+      ]
+    },
+    {
+      "batch_index": 1,
+      "matches": [
+        {
+          "match_index": 16,
+          "seed": 3780965960674396543,
+          "sampling_seed": 2473778091795014880,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 17,
+          "seed": 14165546843221145851,
+          "sampling_seed": 3703462829039519111,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 18,
+          "seed": 3172374467318420717,
+          "sampling_seed": 12865996676425957016,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 19,
+          "seed": 5938897665074516378,
+          "sampling_seed": 9649193194719622848,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 20,
+          "seed": 17761029031674648582,
+          "sampling_seed": 12966822481200702275,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 21,
+          "seed": 62603565982114575,
+          "sampling_seed": 14273260876596185730,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 22,
+          "seed": 13906409272502339181,
+          "sampling_seed": 13684741979463885488,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 23,
+          "seed": 3768595687572919958,
+          "sampling_seed": 8847457350553013845,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 24,
+          "seed": 17911045991752759114,
+          "sampling_seed": 5345138982946152601,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 25,
+          "seed": 273247454802140928,
+          "sampling_seed": 7156878377532236542,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 26,
+          "seed": 6804940964808006326,
+          "sampling_seed": 486641291834568950,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 27,
+          "seed": 16829766632400537839,
+          "sampling_seed": 16245329268109197802,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 28,
+          "seed": 15233713312285865191,
+          "sampling_seed": 11718157263672053615,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 29,
+          "seed": 9098889477661524350,
+          "sampling_seed": 12815794843790324542,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 30,
+          "seed": 6824427632921935727,
+          "sampling_seed": 5130581329157439946,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 31,
+          "seed": 12824159746664626566,
+          "sampling_seed": 5162532633437978532,
+          "learner_seat": 3
+        }
+      ]
+    },
+    {
+      "batch_index": 2,
+      "matches": [
+        {
+          "match_index": 32,
+          "seed": 8386278855627654322,
+          "sampling_seed": 14930795596379832441,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 33,
+          "seed": 18016050627426034974,
+          "sampling_seed": 10747774899722940184,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 34,
+          "seed": 18425695500809021158,
+          "sampling_seed": 4375217425896352681,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 35,
+          "seed": 10775428774756212810,
+          "sampling_seed": 4359345576488693628,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 36,
+          "seed": 656652118511031574,
+          "sampling_seed": 2174632119123561445,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 37,
+          "seed": 3005976757708862719,
+          "sampling_seed": 1424637495474255090,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 38,
+          "seed": 14428997871558931113,
+          "sampling_seed": 2329076242095229578,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 39,
+          "seed": 16763919931722681026,
+          "sampling_seed": 18154945481566268321,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 40,
+          "seed": 13420971883051205364,
+          "sampling_seed": 5975776325313254384,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 41,
+          "seed": 1952678788895934097,
+          "sampling_seed": 2867435666735995930,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 42,
+          "seed": 1741018326595075874,
+          "sampling_seed": 11033281347819786181,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 43,
+          "seed": 16155614057087978412,
+          "sampling_seed": 10627693636503442607,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 44,
+          "seed": 14890801304738229868,
+          "sampling_seed": 12239032487817096746,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 45,
+          "seed": 16079295378941759730,
+          "sampling_seed": 18444485966482202826,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 46,
+          "seed": 8812921251908288060,
+          "sampling_seed": 1174927966470867915,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 47,
+          "seed": 8270206148050867558,
+          "sampling_seed": 13173507296129817559,
+          "learner_seat": 3
+        }
+      ]
+    },
+    {
+      "batch_index": 3,
+      "matches": [
+        {
+          "match_index": 48,
+          "seed": 13667820167703453746,
+          "sampling_seed": 8993222181555651176,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 49,
+          "seed": 16434378170910414669,
+          "sampling_seed": 10361778027491365455,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 50,
+          "seed": 13134951310911998460,
+          "sampling_seed": 11522684106130523567,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 51,
+          "seed": 13576597585251085795,
+          "sampling_seed": 3067045217933684286,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 52,
+          "seed": 6103138001139152371,
+          "sampling_seed": 5355725675096202135,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 53,
+          "seed": 10610675075493778137,
+          "sampling_seed": 10982373905784217875,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 54,
+          "seed": 2108231755169256999,
+          "sampling_seed": 13324008260492573974,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 55,
+          "seed": 14408908945746311689,
+          "sampling_seed": 11638641169806316115,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 56,
+          "seed": 6192023417884680217,
+          "sampling_seed": 3375592042271058969,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 57,
+          "seed": 3411298013322082998,
+          "sampling_seed": 8186247815798049773,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 58,
+          "seed": 16556865359362502208,
+          "sampling_seed": 9771374290133247304,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 59,
+          "seed": 7523149083322622835,
+          "sampling_seed": 7795833975884190300,
+          "learner_seat": 3
+        },
+        {
+          "match_index": 60,
+          "seed": 6567463751169609099,
+          "sampling_seed": 7833860246068546093,
+          "learner_seat": 0
+        },
+        {
+          "match_index": 61,
+          "seed": 14295112250296677866,
+          "sampling_seed": 10112187858723825141,
+          "learner_seat": 1
+        },
+        {
+          "match_index": 62,
+          "seed": 15120151131725716742,
+          "sampling_seed": 11363377497937425753,
+          "learner_seat": 2
+        },
+        {
+          "match_index": 63,
+          "seed": 11662948984671440622,
+          "sampling_seed": 8002686776817781201,
+          "learner_seat": 3
+        }
+      ]
+    }
+  ],
+  "replay_log_atol": 0.0001
+}

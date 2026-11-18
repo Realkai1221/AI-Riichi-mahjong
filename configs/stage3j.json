@@ -1,0 +1,33 @@
+{
+  "reference_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+  "reference_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+  "call_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3c/boundaries/initial.pt",
+  "call_sha256": "3baca74ddcb011ea7346396621c709e7499835c2cf4b9e6e201688aa52e75bf2",
+  "memory_bytes": 34359738368,
+  "free_disk_reserve_bytes": 10000000000,
+  "schema": "stage3j-config-v1",
+  "date": "2026-10-29",
+  "limit_seconds": 5400,
+  "reserve_seconds": 150,
+  "artifact_bytes": 8000000000,
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage3j",
+  "reports_root": "reports/stage3j",
+  "phase_limits_seconds": {
+    "preflight": 600,
+    "evaluation": 3600,
+    "audit": 900
+  },
+  "policy_promotion": false,
+  "new_training_matches": 0,
+  "max_match_executions": 9000,
+  "workers": 14,
+  "evaluation_blocks": 256,
+  "preflight_evaluation_blocks": 2,
+  "seeds": [
+    20261024011,
+    20261024012,
+    20261024013
+  ],
+  "correction_strength": 0.25,
+  "new_optimizer_updates": 0
+}

@@ -1,0 +1,41 @@
+{
+  "reference_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+  "reference_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+  "call_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3c/boundaries/initial.pt",
+  "call_sha256": "3baca74ddcb011ea7346396621c709e7499835c2cf4b9e6e201688aa52e75bf2",
+  "memory_bytes": 34359738368,
+  "free_disk_reserve_bytes": 10000000000,
+  "schema": "stage3i-config-v1",
+  "date": "2026-10-22",
+  "limit_seconds": 5400,
+  "reserve_seconds": 150,
+  "artifact_bytes": 8000000000,
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage3i",
+  "reports_root": "reports/stage3i",
+  "phase_limits_seconds": {
+    "preflight": 450,
+    "features": 600,
+    "training": 1800,
+    "calibration": 300,
+    "evaluation": 1800,
+    "audit": 300
+  },
+  "policy_promotion": false,
+  "new_training_matches": 0,
+  "max_match_executions": 10000,
+  "workers": 14,
+  "evaluation_blocks": 470,
+  "preflight_evaluation_blocks": 2,
+  "reset_blocks": 64,
+  "include_reset_controls": true,
+  "seeds": [
+    20261024011,
+    20261024012,
+    20261024013
+  ],
+  "epoch_candidates": [
+    12,
+    8,
+    4
+  ]
+}

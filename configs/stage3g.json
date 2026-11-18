@@ -1,0 +1,86 @@
+{
+  "reference_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+  "reference_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+  "call_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3c/boundaries/initial.pt",
+  "call_sha256": "3baca74ddcb011ea7346396621c709e7499835c2cf4b9e6e201688aa52e75bf2",
+  "memory_bytes": 34359738368,
+  "free_disk_reserve_bytes": 10000000000,
+  "schema": "stage3g-learning-config-v1",
+  "date": "2026-10-22",
+  "limit_seconds": 7200,
+  "reserve_seconds": 120,
+  "artifact_bytes": 8000000000,
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage3g",
+  "reports_root": "reports/stage3g",
+  "phase_limits_seconds": {
+    "preflight": 600,
+    "collection": 900,
+    "grp": 600,
+    "learning": 4000,
+    "evaluation": 700,
+    "audit": 280
+  },
+  "max_match_executions": 5500,
+  "corpus_matches": 4000,
+  "training_matches": 3200,
+  "development_matches": 800,
+  "preflight_matches": 16,
+  "workers": 14,
+  "root_seed": 2026102301,
+  "preflight_seed": 2026102302,
+  "evaluation_seed": 2026102303,
+  "model_seed": 20261023011,
+  "order_seed": 20261023012,
+  "grp_seed": 20261023021,
+  "epochs": 2,
+  "matches_per_update": 16,
+  "model_batch_rows": 256,
+  "arms": [
+    "mc_a0",
+    "mc_a1",
+    "delta_a0",
+    "delta_a1"
+  ],
+  "optimizer": {
+    "kind": "Adam",
+    "lr": 0.0001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "gradient_clip_l2": 1.0
+  },
+  "grp": {
+    "hidden_width": 32,
+    "epochs": 80,
+    "batch_rows": 512,
+    "learning_rate": 0.003,
+    "folds": 5,
+    "bootstrap_replicates": 1000,
+    "min_stage_games": 100,
+    "min_bin_games": 50,
+    "supported_mass_min": 0.9,
+    "weighted_absolute_bin_bias_max": 0.15,
+    "maximum_supported_bin_bias_max": 0.3,
+    "utility_bin_edges": [
+      -1.5,
+      -0.9,
+      -0.3,
+      0.3,
+      0.9,
+      1.5
+    ]
+  },
+  "development_blocks": 64,
+  "policy_promotion": false,
+  "confirmation_started": false,
+  "rank_utility": [
+    1.5,
+    0.5,
+    -0.5,
+    -1.5
+  ],
+  "historical_stage3f_commit": "094f18c9f8561e0b1ae8954f2692396ca5528b59"
+}

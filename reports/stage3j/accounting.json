@@ -1,0 +1,43 @@
+{
+  "all_leases_closed": true,
+  "complete_match_executions": 8288,
+  "final_test_counts": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 167
+  },
+  "formal_games": 8192,
+  "limit_seconds": 5400,
+  "new_optimizer_updates": 0,
+  "new_training_matches": 0,
+  "numerical_seconds": 609.0376892487984,
+  "operation_statuses": {
+    "completed": 9
+  },
+  "operations": 9,
+  "phase_seconds": {
+    "audit": 26.16175837488845,
+    "evaluation": 567.2949425829574,
+    "preflight": 15.580988290952519
+  },
+  "policy_promotion": false,
+  "preflight_games": 64,
+  "replay_games": 32,
+  "reserved_match_attempts": 8288,
+  "sampled_peak_tree_rss_bytes": 5621809152,
+  "superseded_preflight_sources": [
+    {
+      "bytes_archived": true,
+      "operation": "preflight-tests",
+      "path": "scripts/stage3j_audit.py",
+      "sha256": "9bd0cdc69d31e8de34cc0b2614f6bcfe9c195829f4dadb1a6e601a1b9e08e811"
+    },
+    {
+      "bytes_archived": true,
+      "operation": "preflight-tests",
+      "path": "tests/test_stage3j_audit.py",
+      "sha256": "fe09b22e084b9dc2ec849c5b8250794ede9ad23d58b2ff6fc28c60ed206488c3"
+    }
+  ]
+}

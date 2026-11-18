@@ -1,0 +1,35 @@
+{
+  "reference_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+  "reference_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+  "call_checkpoint": "/Users/example/Library/Application Support/RiichiAI/stage3c/boundaries/initial.pt",
+  "call_sha256": "3baca74ddcb011ea7346396621c709e7499835c2cf4b9e6e201688aa52e75bf2",
+  "memory_bytes": 34359738368,
+  "free_disk_reserve_bytes": 10000000000,
+  "schema": "stage3h-diagnostic-config-v1",
+  "date": "2026-10-22",
+  "limit_seconds": 1200,
+  "reserve_seconds": 60,
+  "artifact_bytes": 1000000000,
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/stage3h",
+  "reports_root": "reports/stage3h",
+  "phase_limits_seconds": {
+    "preflight": 120,
+    "inference": 600,
+    "gradients": 300,
+    "audit": 120
+  },
+  "optimizer_steps": 0,
+  "new_matches": 0,
+  "policy_promotion": false,
+  "workers": 14,
+  "candidate_split_sizes": [
+    128,
+    96,
+    64
+  ],
+  "gradient_matches": 64,
+  "gradient_group_matches": 16,
+  "preflight_rows_per_match": 64,
+  "historical_stage3g_commit": "420a4163f7b8ef210b800115133aea09ee1df29e",
+  "historical_stage3g_manifest_sha256": "519d5c0bbe3833e476d546cda049960af0c0df7e41752e49bd039d92920ece0a"
+}

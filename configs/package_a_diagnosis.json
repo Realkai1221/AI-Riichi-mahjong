@@ -1,0 +1,89 @@
+{
+  "schema": "package-a-diagnosis-v1",
+  "authorization": "User accepted the proposed 600-second diagnosis-only follow-up on 18 October 2026.",
+  "package_a_snapshot_commit": "c7ae395babcbc56d056a37995ad23952b9d9d4ba",
+  "package_a_manifest_sha256": "78891fb2a16653329500d21f4f2e4249ec1e00c9c3c4074b5b6e580ac4ae971b",
+  "stage2b_config": "configs/stage2b.json",
+  "reports_root": "reports/package_a_diagnosis",
+  "data_root": "/Users/example/Library/Application Support/RiichiAI/package_a_diagnosis",
+  "limit_seconds": 600,
+  "memory_bytes": 34359738368,
+  "artifact_bytes": 250000000,
+  "reserve_seconds": 30,
+  "test_allowance_seconds": 90,
+  "prepare_allowance_seconds": 60,
+  "per_model_allowance_seconds": 60,
+  "maximum_model_attempts": 7,
+  "device": "mps",
+  "batch_size": 256,
+  "epsilon": 0.01,
+  "training_rows": 10000,
+  "training_sample_seed": 2026101801,
+  "precision_per_stratum": 32,
+  "precision_seed": 2026076633,
+  "expected_training_rows": 490206,
+  "expected_validation_rows": 16024,
+  "checkpoints": [
+    {
+      "name": "original-rank01",
+      "path": "/Users/example/Library/Application Support/RiichiAI/stage2b/models/selected.pt",
+      "sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+      "role": "stable research reference, not a matched rank-zero control"
+    },
+    {
+      "name": "control-202610171-terminal",
+      "path": "/Users/example/Library/Application Support/RiichiAI/package_a/a2/models/control-202610171/terminal.pt",
+      "sha256": "6271172390ec89176b67482ba7948cb6fe649cf5594ff8f2f4bb7d900fd8b9e2",
+      "role": "control terminal",
+      "source_report": "reports/package_a/a2/run-control-202610171.json",
+      "checkpoint_kind": "terminal"
+    },
+    {
+      "name": "control-202610172-terminal",
+      "path": "/Users/example/Library/Application Support/RiichiAI/package_a/a2/models/control-202610172/terminal.pt",
+      "sha256": "c12f2451dd8703f766c9e29c0fe91659a7239ccf8f4620d979f2ca2df4b07bfc",
+      "role": "control terminal",
+      "source_report": "reports/package_a/a2/run-control-202610172.json",
+      "checkpoint_kind": "terminal"
+    },
+    {
+      "name": "smooth-202610171-selected",
+      "path": "/Users/example/Library/Application Support/RiichiAI/package_a/a2/models/smooth-202610171/selected.pt",
+      "sha256": "1d99a104d0ca86354556c677d69c7dec84962b11245182bfff34671f3cb20e26",
+      "role": "smooth selected",
+      "source_report": "reports/package_a/a2/run-smooth-202610171.json",
+      "checkpoint_kind": "selected"
+    },
+    {
+      "name": "smooth-202610171-terminal",
+      "path": "/Users/example/Library/Application Support/RiichiAI/package_a/a2/models/smooth-202610171/terminal.pt",
+      "sha256": "bd8112b7caa55f4e4932b3a46a58746eb3cf5ee24f5cf350140baf4635f37451",
+      "role": "smooth terminal",
+      "source_report": "reports/package_a/a2/run-smooth-202610171.json",
+      "checkpoint_kind": "terminal"
+    },
+    {
+      "name": "smooth-202610172-selected",
+      "path": "/Users/example/Library/Application Support/RiichiAI/package_a/a2/models/smooth-202610172/selected.pt",
+      "sha256": "d72dd6e5eda7ed49c188b09c4fa2cd88856ea2319d856c51da1e5241cc7567e5",
+      "role": "smooth selected",
+      "source_report": "reports/package_a/a2/run-smooth-202610172.json",
+      "checkpoint_kind": "selected"
+    },
+    {
+      "name": "smooth-202610172-terminal",
+      "path": "/Users/example/Library/Application Support/RiichiAI/package_a/a2/models/smooth-202610172/terminal.pt",
+      "sha256": "dd270c79723f4b415fa80cc438c21030ec4cfc72acaf86f160f9ff7c65aab3b0",
+      "role": "smooth terminal",
+      "source_report": "reports/package_a/a2/run-smooth-202610172.json",
+      "checkpoint_kind": "terminal"
+    }
+  ],
+  "constraints": {
+    "optimizer_updates": 0,
+    "new_matches": 0,
+    "action_test_predictions": 0,
+    "test_split_loading": false
+  },
+  "interpretation": "Compare teacher-only sampled training with teacher validation; student validation is a separate transfer population. Descriptive diagnosis, no hypothesis-test or playing-strength claim."
+}

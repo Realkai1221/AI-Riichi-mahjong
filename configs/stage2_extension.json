@@ -1,0 +1,22 @@
+{
+  "schema": "riichi-ai-stage2-exploratory-extension-v1",
+  "date": "2026-10-17",
+  "reason": "All initial policy-best checkpoints occur at the final 2500 updates; 800-match training and validation KL remain close and validation KL is falling. The initial frozen student's development match pilot is weak. Diagnose optimization before increasing data/model scale or proposing RL.",
+  "scope": "One exploratory optimization extension within the existing 3600-second training and storage/memory caps; preserve the original fixed-update pilot separately.",
+  "implementation_commit": "8b14e0d842d55d4c0230fad8bb6f7bd5ce91d1c1",
+  "resume_run": "soft-800",
+  "training_matches": 800,
+  "total_target_updates": 20000,
+  "additional_training_seconds_cap": 600,
+  "unchanged": ["dataset", "encoder", "architecture", "optimizer", "learning rate", "rank weight", "target mode", "RNG/sampler continuation", "validation subset and selection rule"],
+  "selection": "Highest fixed validation tie agreement, then lowest soft-target KL; no test-based checkpoint choice.",
+  "action_test_policy": "The 100-match action test remains reported only for the initial frozen student. Do not re-evaluate it or relabel it as a fresh independent test for the extension.",
+  "evaluation": {
+    "pilot_blocks": 30,
+    "pilot_seed": 2026101707,
+    "confirmation_seed": 2026101708,
+    "baseline": "shanten_v2",
+    "opponents": ["shanten_v2", "defense_v2", "shanten_v2"],
+    "retention_protocol": "Same prespecified margin, normal approximation, variance floor/inflation, minimum/maximum count, and futility/cap rules as the initial pilot. Any confirmation count is written before fresh confirmation outcomes. No further tuning after confirmation."
+  }
+}

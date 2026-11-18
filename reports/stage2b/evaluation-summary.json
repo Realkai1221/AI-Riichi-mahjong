@@ -1,0 +1,227 @@
+{
+  "confirmation_plan": {
+    "alpha": 0.05,
+    "approximate_power_at_cap": 0.7209521362140943,
+    "approximate_power_at_required_blocks": 0.8009587046680703,
+    "assumed_true_utility_difference": 0.0,
+    "checkpoint_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+    "confirmation_blocks": null,
+    "confirmation_root_seed": 2026101718,
+    "hypotheses": "H0: mean(student utility - teacher utility) <= -margin; H1: mean > -margin",
+    "limitations": "One-sided normal approximation using sample SD of independent block means; not an exact, distribution-free, sequential, or multiple-testing-adjusted guarantee. Requires a frozen candidate/panel and fresh confirmation blocks at a predeclared fixed count. Failure to demonstrate non-inferiority does not establish inferiority. A zero-variance pilot uses the positive SD floor; it is not evidence of zero population variance.",
+    "margin": 0.1,
+    "maximum_blocks": 256,
+    "minimum_blocks": 185,
+    "phase": "planning",
+    "pilot_blocks": 30,
+    "pilot_mean_utility_difference": 0.05,
+    "pilot_sd": 0.5738556829269762,
+    "pilot_sd_multiplier": 1.25,
+    "pilot_zero_variance": false,
+    "planning_power": 0.8,
+    "planning_sd": 0.7173196036587203,
+    "required_blocks": 319,
+    "run_confirmation": false,
+    "schema": "riichi-ai-normal-noninferiority-v1",
+    "status": "inconclusive_budget",
+    "variance_floor_sd": 0.5460174728387007
+  },
+  "development": [
+    {
+      "arm_summaries": {
+        "baseline": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            33,
+            23,
+            28,
+            36
+          ],
+          "mean_focal_rank": 2.558333333333333,
+          "mean_focal_score": 24076.666666666668
+        },
+        "candidate": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            35,
+            23,
+            28,
+            34
+          ],
+          "mean_focal_rank": 2.5083333333333333,
+          "mean_focal_score": 25540.833333333332
+        }
+      },
+      "checkpoint_sha256": "5130185ba8a397b84446ba8dc2d02f068a9448db5c0373f2aeb357e4af525a6f",
+      "elapsed_seconds": 25.00027116603451,
+      "path": "/path/to/AI-Riichi-mahjong/reports/stage2b/development-features_rank01-202610171.json",
+      "recipe": "features_rank01",
+      "seed": 202610171,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          -0.15833333333333333,
+          0.25
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -1.4377256711061894,
+          1.5377256711061895
+        ],
+        "independent_blocks": 30,
+        "mean_rank_improvement": 0.05,
+        "mean_utility_difference": 0.05,
+        "standard_error": 0.10477123409721237,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    },
+    {
+      "arm_summaries": {
+        "baseline": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            33,
+            23,
+            28,
+            36
+          ],
+          "mean_focal_rank": 2.558333333333333,
+          "mean_focal_score": 24076.666666666668
+        },
+        "candidate": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            38,
+            16,
+            29,
+            37
+          ],
+          "mean_focal_rank": 2.5416666666666665,
+          "mean_focal_score": 23374.166666666668
+        }
+      },
+      "checkpoint_sha256": "21532b4d35e0f5a5f9be3313871d5487061411fc257896640430c562b8679375",
+      "elapsed_seconds": 25.772899500036146,
+      "path": "/path/to/AI-Riichi-mahjong/reports/stage2b/development-features_rank01-202610172.json",
+      "recipe": "features_rank01",
+      "seed": 202610172,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          -0.19166666666666668,
+          0.23333333333333334
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -1.4710590044395229,
+          1.504392337772856
+        ],
+        "independent_blocks": 30,
+        "mean_rank_improvement": 0.016666666666666666,
+        "mean_utility_difference": 0.016666666666666666,
+        "standard_error": 0.10849898917197798,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    },
+    {
+      "arm_summaries": {
+        "baseline": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            33,
+            23,
+            28,
+            36
+          ],
+          "mean_focal_rank": 2.558333333333333,
+          "mean_focal_score": 24076.666666666668
+        },
+        "candidate": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            35,
+            24,
+            32,
+            29
+          ],
+          "mean_focal_rank": 2.4583333333333335,
+          "mean_focal_score": 27092.5
+        }
+      },
+      "checkpoint_sha256": "a71e70f783ad3678af750da19fb4735c2cb103649d5de14e5076fb5b69cbd138",
+      "elapsed_seconds": 26.46104333299445,
+      "path": "/path/to/AI-Riichi-mahjong/reports/stage2b/development-features_rank0-202610171.json",
+      "recipe": "features_rank0",
+      "seed": 202610171,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          -0.125,
+          0.3333333333333333
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -1.3877256711061894,
+          1.5877256711061896
+        ],
+        "independent_blocks": 30,
+        "mean_rank_improvement": 0.1,
+        "mean_utility_difference": 0.1,
+        "standard_error": 0.11658453595133665,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    },
+    {
+      "arm_summaries": {
+        "baseline": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            33,
+            23,
+            28,
+            36
+          ],
+          "mean_focal_rank": 2.558333333333333,
+          "mean_focal_score": 24076.666666666668
+        },
+        "candidate": {
+          "completed_games": 120,
+          "focal_placement_counts": [
+            38,
+            23,
+            25,
+            34
+          ],
+          "mean_focal_rank": 2.4583333333333335,
+          "mean_focal_score": 26619.166666666668
+        }
+      },
+      "checkpoint_sha256": "8a89e7eb0492885974e36b3f67a92adc503531152963d4998baf5963c42c9d4a",
+      "elapsed_seconds": 27.377553957980126,
+      "path": "/path/to/AI-Riichi-mahjong/reports/stage2b/development-features_rank0-202610172.json",
+      "recipe": "features_rank0",
+      "seed": 202610172,
+      "statistics": {
+        "bootstrap_percentile_95_exploratory": [
+          -0.21666666666666667,
+          0.391874999999997
+        ],
+        "bootstrap_replicates": 5000,
+        "fixed_budget_hoeffding_95": [
+          -1.3877256711061894,
+          1.5877256711061896
+        ],
+        "independent_blocks": 30,
+        "mean_rank_improvement": 0.1,
+        "mean_utility_difference": 0.1,
+        "standard_error": 0.1632993161855452,
+        "warning": "Development comparison, not a promotion test; intervals assume fresh independent seed blocks and a fixed budget."
+      }
+    }
+  ],
+  "elapsed_seconds": 105.60345799999777,
+  "final_checkpoint_unchanged": true,
+  "noninferiority": {
+    "confirmation_run": false,
+    "passed": false,
+    "status": "inconclusive_budget",
+    "valid": false
+  }
+}

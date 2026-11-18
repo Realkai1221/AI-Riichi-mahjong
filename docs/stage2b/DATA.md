@@ -1,0 +1,39 @@
+# Stage 2B data contract
+
+Stage 2A remains a historical artifact. Its 800 training and 100 validation matches can receive separate, hashed efficiency features; its test split is never read by this pipeline. These are implemented interfaces and small fixture tests, not evidence that the formal Stage 2B collection or training has run. The frozen collection protocol is [stage2b.json](../../configs/stage2b.json).
+
+## Focal collection
+
+`generate_stage2b_dataset(output_dir, config, ...)` freezes its complete plan before playing. The main plan has 100 historical-student diagnostic matches, 50 teacher-focal plus 50 historical-student-focal validation matches, and the same 50/50 test allocation. Each full match has an independent derived seed. Focal seats cycle within each group: 25 each in a 100-match group and 13/13/12/12 in a 50-match group. The three clockwise opponents are `shanten_v2`, `defense_v2`, `shanten_v2`; rotating the focal seat rotates that panel. Seeds are checked against earlier recorded campaigns and reserved Stage 2B roots. Runtime campaigns additionally audit their actual derived seeds.
+
+All seats act from the same pre-response snapshots. Only focal actor rows and teacher targets are saved for learning. The focal behavior is either `shanten_v2` or the frozen checkpoint, while every focal label comes from a separate `shanten_v2` query on that same permitted view. The deterministic behavior choice and uniform distribution over teacher-best semantic classes are different quantities. Teacher preference keys are target/audit metadata and never actor inputs. The teacher remains a limited closed-hand heuristic; this data does not establish strong open-hand or kan play.
+
+Each match has three artifacts:
+
+- `actor/match-*.npz`: versioned v1 actor tiles/globals, ragged legal semantic candidates and offsets, and deduplicated per-hand visible history with row prefix slices. History remains 128 events; globals retain its total length and truncation indicators.
+- `targets/match-*.npz`: teacher distribution, best mask, teacher chosen index and preference keys, row seat/step/hand identity, physical candidate count, and actual complete-match final rank. These ranks describe the behavior policy that played, not a counterfactual teacher value.
+- `auditor/match-*.json.gz`: the canonical event stream once, all four seats' submitted physical actions, semantic candidate identities, view digests, frozen policy provenance, teacher requests for focal rows, and subsequent resolved-event spans.
+
+A submitted simultaneous request can be preempted. Request labels therefore remain separate from resolved events; pass has no explicit event, and unmatched non-pass requests are marked `not_emitted_or_preempted`. Failed/truncated matches retain audit evidence but cannot supply rank targets or valid training shards. Physical tile and point/deposit conservation are checked through genuine trajectories.
+
+`verify_stage2b_dataset(path, replay_matches_per_group=1)` checks every artifact hash, split/seed/group assignment, numeric schema and focal-row identity. It checks every auditor's four-seat policy provenance and reproduces at least one full match per configured group, comparing all deterministic artifact bytes, including actor inputs, labels, behavior and resolved events. This is internal reproducibility, not independent rules certification. Loaded checkpoint identity is enforced in each worker and checked again at collection completion.
+
+## Actor-only derived features and loading
+
+`derive_efficiency(source_dir, output_dir, splits=..., max_seconds=...)` computes each discard candidate's exact `[post_discard_shanten, visible_ukeire, nonexhausted_improving_type_count, applicable]` from stored actor inputs and legal candidates only. The float32 inputs divide these integers by `[8, 136, 34, 1]`; other action kinds receive zero values with applicability zero. Saved teacher keys are read only afterward to check every exact preference key, best set, deterministic choice and target distribution. Both scaled features and exact integer audit values are retained. The source manifest is hash-bound and checked unchanged across the operation.
+
+Old derivation is limited to `train` and `validation`. Fresh diagnostic/validation/test feature alignment is permitted, but test prediction or performance evaluation remains sealed until final checkpoint selection. `load_efficiency_split(source_dir, derived_dir, split, assisted=True, ..., allow_test=False)` returns common `SplitDataset` samples with `encoded`, `policy_target`, `best_mask`, `chosen_index`, `rank_target`, match/seat/step identity, and `optional`. It adds `stratum` and `teacher_preference_keys` outside `encoded`; assisted samples alone add `encoded['candidate_efficiency']`. Raw and assisted samples have identical indices, labels and candidate order. The actor loader does not read auditor artifacts.
+
+The wrapper exposes `stratum_indices` for deterministic stratified sampling, and `dataset_identity()` binds source and derived manifest hashes, selected matches, row-index hash, feature schema and stratum counts. Preload keeps selected compressed-match arrays in memory after one read rather than repeatedly decompressing shuffled batches. A memory guard includes both base and derived cached arrays. The runner must check the protocol's historical Stage 2A manifest hash before loading it; derived-source binding alone is not a substitute for the frozen experiment identity.
+
+## Conditional student training data
+
+`make_aggregation_config(main_config, base_dataset_dir, checkpoint_path, checkpoint_sha256, matches=300)` only freezes an eligible conditional configuration; it does not collect. The caller must first establish the protocol's validation trigger. Its separate `riichi-ai-stage2b-student-aggregation-v1` identity binds the original main-corpus manifest and the selected primary base checkpoint. It permits one new `train`/`student`/`frozen_candidate` group, at most 300 matches, using the aggregation namespace, and enforces a combined main-plus-conditional ceiling of 600. It cannot change the original panel or protocol or aggregate an earlier aggregation.
+
+The same collection, replay, derivation and loader APIs apply to separate `aggregation` and `derived-aggregation` directories. Only focal rows enter the new training set; full-match ranks still belong to the actual frozen behavior. The trainer implements the declared 50:50 original/student-row sampling mixture and records both dataset identities. The main diagnostic, validation and test matches are never relabeled as training examples.
+
+## Commands and limits
+
+`scripts/stage2b_data.py collect` collects and verifies the main corpus. `derive-old` builds `derived-stage2a` after checking the protocol's Stage 2A manifest SHA; `derive-fresh` builds `derived-stage2b`. Each writes compact reports under `reports/stage2b`; bulk data use the configured non-iCloud data root. Derivation accepts `--max-seconds` and must run inside the training-budget subprocess wrapper so startup, exact alignment checks, compression and report writes are charged. Collection and its full-replay verification have separate timing fields.
+
+The CLI subtracts all existing Stage 2B data and report logical file bytes from the shared 5 GB ceiling and reserves report overhead. Generation uses a bounded spawn-process submission window, deterministic output ordering, at most eight workers, per-worker sampled RSS shares and aggregate RSS checks where available. Derivation streams one match at a time. Memory checks are cooperative sampled checks, not an OS hard limit; unavailable process-tree monitoring is recorded explicitly. A timeout, cap or failed check leaves a failed manifest and stops eligibility rather than silently dropping data. Formal collection is performed only by the root runner after source/config freeze.
